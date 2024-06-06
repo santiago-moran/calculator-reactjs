@@ -5,6 +5,7 @@
 body {
     height: 100vh;
     color: #fff;
+    font-size: 25px;
 }
 #app {
     display: flex;
@@ -29,6 +30,7 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    font-size: 50px;
 }
 .buttons {
     display: grid;
@@ -48,7 +50,6 @@ body {
     justify-content: center;
     align-items: center;
     font-weight: bolder;
-    font-size: 25px;
 }
 .button:hover {
     background-color: #222;
