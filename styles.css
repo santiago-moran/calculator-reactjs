@@ -34,17 +34,32 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 60px);
-    gap: 5px;
+    gap: 10px;
     padding: 10px;
+}
+.button:nth-child(17){
+    grid-column-start: 2;
 }
 .button {
     background-color: #333;
     border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 25px;
 }
 .button:hover {
     background-color: #222;
 }
 .symbol {
-    color: #080;
+    color: #0f0;
+}
+.equal {
+    color: #fff;
+    background-color: #090;
+}
+.equal:hover {
+    background-color: #060;
 }
