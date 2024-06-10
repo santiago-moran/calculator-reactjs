@@ -1,22 +1,24 @@
 import '../styles.css'
 import { Button } from './components/Button'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons'
-import { faXmark } from '@fortawesome/free-solid-svg-icons'
-import { faMinus } from '@fortawesome/free-solid-svg-icons'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { Substract } from './components/operators/Substraction'
+import { Add } from './components/operators/Addition'
+import { Multiply } from './components/operators/Multiplication'
+import { Delete } from './components/operators/Delete'
+import { Clear } from './components/operators/Clear'
+import { Split } from './components/operators/Division'
+import { Equal } from './components/operators/Equal'
 
 export function App () {
     const buttons = Array(18).fill(null)
     const CONTENT = {
-        0: 'C',
-        1: '/',
-        2: <FontAwesomeIcon icon={faXmark}/>,
-        3: <FontAwesomeIcon icon={faPlus}/>,
-        7: <FontAwesomeIcon icon={faMinus}/>,
+        0: <Clear />,
+        1: <Split />,
+        2: <Multiply />,
+        3: <Add />,
+        7: <Substract />,
         11: '.',
-        15: <FontAwesomeIcon icon={faDeleteLeft}/>,
-        17: '='
+        15: <Delete />,
+        17: <Equal />
     }
     let number = 1;
 
@@ -25,12 +27,7 @@ export function App () {
             <div className='output'></div>
             <section className='buttons'>
                 {buttons.map((_, index) => {
-                    return (
-                        <Button 
-                        key={index}
-                        content={CONTENT[index] ? CONTENT[index] : (number == 10 ? number = 0 : number++)}
-                        />
-                    )
+                    return 
                 })}
             </section>
         </section>

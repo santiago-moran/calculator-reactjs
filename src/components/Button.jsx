@@ -1,7 +1,7 @@
 import '../../styles.css'
 
-export function Button ({content}) {
+export function Button ({className, content}) {
     return (
-        <div className={isNaN(parseInt(content)) && content == "=" ? "button symbol equal" : (isNaN(parseInt(content)) ? "button symbol" : "button")}>{content}</div>
+        <div className={className}>{content}</div>
     )
 }
