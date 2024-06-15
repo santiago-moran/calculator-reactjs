@@ -1,7 +1,13 @@
 import '../../styles.css'
 
-export function Button ({className, content}) {
+export function Button ({className, content, handleClick}) {
     return (
-        <div className={className}>{content}</div>
+        <div 
+        className={className} 
+        onClick={() => {
+            isNaN(parseInt(content)) ? 
+            (content == "." ? handleClick(content) : handleClick()) 
+            : handleClick(content)
+        }}>{content}</div>
     )
 }

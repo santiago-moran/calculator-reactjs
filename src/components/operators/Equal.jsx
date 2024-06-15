@@ -1,7 +1,7 @@
 import { Button } from '../Button'
 
-export function Equal () {
+export function Equal ({setResult}) {
     return (
-        <Button className="button symbol equal" content="="/>
+        <Button className="button symbol equal" content="=" handleClick={() => setResult(true)}/>
     )
 }
