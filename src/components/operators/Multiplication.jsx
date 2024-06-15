@@ -2,8 +2,8 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Button } from '../Button'
 
-export function Multiply ({setOperator}) {
+export function Multiply ({setOperator, className}) {
     return (
-        <Button className="button symbol" content={<FontAwesomeIcon icon={faXmark} />} handleClick={() => setOperator("*")}/>
+        <Button className={className} content={<FontAwesomeIcon icon={faXmark} />} handleClick={() => setOperator("*")}/>
     )
 }

@@ -24,7 +24,8 @@ export function App () {
             firstNumber != undefined && (
                 secondNumber != undefined ? setOutput(isNaN(operations[operator]) ? "Syntax Error" : operations[operator]) : (!operator ? setOutput([firstNumber]) : setOutput("Syntax Error")),
                 setFirstNumber(undefined),
-                setSecondNumber(undefined)
+                setSecondNumber(undefined),
+                setOperator(undefined)
             ),
             setResult(false)
         )
@@ -93,10 +94,10 @@ export function App () {
     }
     const CONTENT = {
         0: <Clear key={0} clearAll={clearAll}/>,
-        1: <Split key={1} setOperator={assignFirstNum}/>,
-        2: <Multiply key={2} setOperator={assignFirstNum}/>,
-        3: <Add key={3} setOperator={assignFirstNum}/>,
-        7: <Substract key={7} setOperator={assignFirstNum}/>,
+        1: <Split key={1} setOperator={assignFirstNum} className={operator == '/' ? 'button symbol selected' : 'button symbol'}/>,
+        2: <Multiply key={2} setOperator={assignFirstNum} className={operator == '*' ? 'button symbol selected' : 'button symbol'}/>,
+        3: <Add key={3} setOperator={assignFirstNum} className={operator == '+' ? 'button symbol selected' : 'button symbol'}/>,
+        7: <Substract key={7} setOperator={assignFirstNum} className={operator == '-' ? 'button symbol selected' : 'button symbol'}/>,
         11: <Button key= {11} className="button symbol" content="." handleClick={printNumber}/>,
         15: <Delete key={15} deleteNumber={deleteNumber}/>,
         17: <Equal key={17} setResult={assignResult}/>
@@ -105,7 +106,9 @@ export function App () {
     //RENDER SECTION
     return (
         <section className='calculator'>
-            <div className='output'>{output}</div>
+            <div className='output'>
+                <span>{output}</span>
+            </div>
             <section className='buttons'>
                 {buttons.map((_,index) => {
                     return (

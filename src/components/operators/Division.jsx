@@ -1,7 +1,7 @@
 import { Button } from '../Button'
 
-export function Split ({setOperator}) {
+export function Split ({setOperator, className}) {
     return (
-        <Button className="button symbol" content="/" handleClick={() => setOperator("/")}/>
+        <Button className={className} content="/" handleClick={() => setOperator("/")}/>
     )
 }
